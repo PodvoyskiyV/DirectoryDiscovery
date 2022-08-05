@@ -40,11 +40,21 @@ try:
             file_name = chosen_file(int(file_name))
             break
         else:
+            print("Typed that doesn't match any of the filenames")
             print('You have some files to choose:')
             print('best15 [1], best110 [2], best1050 [3], big [4], small [5], common [6], indexes [7], names [8]')
-            file_name = input('[*] Enter a number corresponding to the file name: ')
+            file_name = input('[*] Enter a number corresponding to the file name from 1 to 8: ')
 
-    level_of_recursion = input('[*] Enter Level Of Recursion: ')
+    print('Level of recursion can help you to make more deep search of directories')
+    print('Example: http://example.com/lvl1/lvl2/lvl3/lvl4/lvl5')
+    level_of_recursion = input('[*] Enter Level Of Recursion from 1 to 5: ')
+    while True:
+        if level_of_recursion in ['1', '2', '3', '4', '5']:
+            level_of_recursion = int(level_of_recursion)
+            break
+        else:
+            print('Level of Recursion is incorrect')
+            level_of_recursion = input('[*] Enter Level Of Recursion from 1 to 5: ')
 
 
     def request(url):
