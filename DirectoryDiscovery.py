@@ -30,7 +30,7 @@ def request(url):
 
 
 def directory_discovery(current_lvl, target):
-    file = open(f'wordlists/{file_name}', 'r')
+    file = open(f'Wordlists/{file_name}', 'r')
     for line in file:
         directory = line.strip()
         full_url = target + '/' + directory
@@ -38,13 +38,15 @@ def directory_discovery(current_lvl, target):
         if response != 404:
             result.write(f'{full_url} {response} \n')
             if response // 100 == 1:
-                print('Discovered Directory At This Path: ' + colored(full_url, 'blue'), colored(response, 'blue'))
+                print('Discovered Directory At This Path: ' + colored(full_url, 'blue'), colored(str(response), 'blue'))
             elif response // 100 == 2:
-                print('Discovered Directory At This Path: ' + colored(full_url, 'blue'), colored(response, 'green'))
+                print('Discovered Directory At This Path: ' + colored(full_url, 'blue'),
+                      colored(str(response), 'green'))
             elif response // 100 == 3:
-                print('Discovered Directory At This Path: ' + colored(full_url, 'blue'), colored(response, 'yellow'))
+                print('Discovered Directory At This Path: ' + colored(full_url, 'blue'),
+                      colored(str(response), 'yellow'))
             else:
-                print('Discovered Directory At This Path: ' + colored(full_url, 'blue'), colored(response, 'red'))
+                print('Discovered Directory At This Path: ' + colored(full_url, 'blue'), colored(str(response), 'red'))
             if current_lvl + 1 <= lvl_of_recursion:
                 directory_discovery(current_lvl + 1, full_url)
     file.close()
@@ -65,7 +67,7 @@ try:
             print('Target URL should be like', colored('http(s)://example.com', 'green'))
             target_url = input('[*] Enter Target URL: ')
 
-    git = 'https://github.com/PodvoyskiyV/DirectoryDiscovery/tree/master/wordlists'
+    git = 'https://github.com/PodvoyskiyV/DirectoryDiscovery/tree/master/Wordlists'
     print('\n You have some files to choose:')
     print('best15 [1], best110 [2], best1050 [3], big [4], small [5], common [6], indexes [7], names [8]')
     print('View all this files you can at', colored(git, 'blue'))
@@ -112,7 +114,7 @@ try:
     end = datetime.datetime.now()
     print("\n" + "-" * 50)
     print("Scanning ended at: " + str(end))
-    print("Scanning duration is: " + str(end-start))
+    print("Scanning duration is: " + str(end - start))
     print("-" * 50 + "\n")
 
 
