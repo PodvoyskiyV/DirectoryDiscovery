@@ -20,11 +20,11 @@ Word lists:
 
 ## External modules
 
-1. DATETIME - used in the user interface
-2. PYFIGLET - to create a banner and use in the user interface
-3. REQUESTS - check for pages and directories
-4. TERMCOLOR - for banner color and used in user interface.
-5. SYS - for the correct termination of the program, if the user wants to stop the search
+1. DATETIME - used in the user interface.
+2. PYFIGLET - to create a banner and use in the user interface.
+3. REQUESTS - check for pages and directories.
+4. SYS - for the correct termination of the program, if the user wants to stop the search.
+5. TERMCOLOR - for banner color and used in user interface.
 
 ## Installation
 
